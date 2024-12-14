@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelTestSuite" parallel="tests" thread-count="2">
+
+	<listeners>
+		<listener class-name="testRailUtility.TestRailListener" />
+	</listeners>
+
+
+	<test name="Test1">
+		<parameter name="browser" value="edge" />
+		<parameter name="os" value="Windows 10" />
+		<classes>
+			<class name="tests.TestClass">
+				<methods>
+					<include name="test_verify_page_title"></include>
+					<include name="test_verify_login"></include>
+					<include name="test_verify_price_filter"></include>
+					<include
+						name="test_inspect_product_and_veriry_add_to_cart_btn"></include>
+					<include name="test_add_to_cart"></include>
+					<include name="test_cart_page"></include>
+					<include name="test_entering_chekoutPage"></include>
+					<include name="test_fill_and_submit_checkout_form"></include>
+					<include
+						name="test_orderedProduct_and_other_data_during_payment"></include>
+					<include name="test_finish_payment"></include>
+					<include name="test_logout_and_verify_logoutPage_presence"></include>
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Test2">
+		<parameter name="browser" value="firefox" />
+		<parameter name="os" value="Windows 10" />
+
+		<classes>
+			<class name="tests.TestClass">
+				<methods>
+					<include name="test_verify_page_title"></include>
+					<include name="test_verify_login"></include>
+					<include name="test_verify_price_filter"></include>
+					<include
+						name="test_inspect_product_and_veriry_add_to_cart_btn"></include>
+					<include name="test_add_to_cart"></include>
+					<include name="test_cart_page"></include>
+					<include name="test_entering_chekoutPage"></include>
+					<include name="test_fill_and_submit_checkout_form"></include>
+					<include
+						name="test_orderedProduct_and_other_data_during_payment"></include>
+					<include name="test_finish_payment"></include>
+					<include name="test_logout_and_verify_logoutPage_presence"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>    
